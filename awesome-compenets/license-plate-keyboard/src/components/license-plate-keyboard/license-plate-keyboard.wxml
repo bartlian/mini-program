@@ -1,0 +1,33 @@
+<!--components/license-plate-keyboard/license-plate-keyboard.wxml-->
+<view class="keyboard {{show ? 'bt0' : ''}}">
+  <view class="btn-box">
+    <text class="btn-complete" bindtap="complete">完成</text>
+  </view>
+  <view class="content" hidden="{{mode === 'pro'}}">
+    <!-- 数字字母 -->
+    <view wx:for="{{lettersArr}}" wx:for-item="lettersItem" wx:for-index="lettersArrIndex" class="row {{lettersArrIndex > 0 ? 'mt20' : ''}}">
+      <block wx:if="{{lettersArrIndex < 3}}">
+        <text wx:for="{{lettersItem}}" class="row-item" data-key="{{item}}" bindtap="handleTouch">{{item}}</text>
+      </block>
+      <block wx:else>
+        <text class="row-item btn-toggle" bindtap="toggleMode">省份</text>
+        <text wx:for="{{lettersItem}}" class="row-item" data-key="{{item}}" bindtap="handleTouch">{{item}}</text>
+        <text class="row-item btn-toggle" bindtap="delete">删除</text>
+      </block>
+    </view>
+  </view>
+  <view class="content" hidden="{{mode === 'abc'}}">
+    <!-- 省份 -->
+    <view wx:for="{{proArr}}" wx:for-item="proItem" wx:for-index="proArrIndex" class="row {{proArrIndex > 0 ? 'mt20' : ''}}">
+      <block wx:if="{{proArrIndex < 3}}">
+        <text wx:for="{{proItem}}" class="row-item" data-key="{{item}}" bindtap="handleTouch">{{item}}</text> 
+      </block>
+      <block wx:else>
+        <text class="row-item btn-toggle" bindtap="toggleMode">ABC</text>
+        <text wx:for="{{proItem}}" class="row-item" data-key="{{item}}" bindtap="handleTouch">{{item}}</text>
+        <text class="row-item btn-toggle" bindtap="delete">删除</text>
+      </block>
+    </view>
+  </view>
+</view>
+  

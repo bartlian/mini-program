@@ -1,0 +1,76 @@
+/* components/license-plate-keyboard/license-plate-keyboard.wxss */
+.keyboard {
+  width: 100%;
+  height: 500rpx;
+  background: #e7e8ea;
+  position: absolute;
+  left: 0;
+  bottom: -500rpx;
+  z-index: 10;
+  transition: all 300ms;
+}
+
+.bt0 {
+  bottom: 0;
+}
+
+.btn-box {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.btn-complete {
+  width: 140rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4987ff;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.content {
+  width: 100%;
+  padding: 0 8rpx;
+  box-sizing: border-box;
+}
+
+.row {
+  width: 100%;
+  height: 74rpx;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.mt20 {
+  margin-top: 20rpx;
+}
+
+.row-item {
+  width: 60rpx;
+  height: 100%;
+  display: inline-block;
+  background: #fff;
+  border-radius: 8rpx;
+  box-shadow: 4rpx 0 2rpx #ccc;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 74rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #000;
+}
+
+.hover-item {
+  background: #ccc;
+}
+
+.btn-toggle {
+  width: 96rpx;
+  background: #d0d1d3;
+}
