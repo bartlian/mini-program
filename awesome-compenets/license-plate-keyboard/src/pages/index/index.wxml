@@ -1,7 +1,9 @@
 <!--index.wxml-->
-<view>
-  <button bindtap="handleShow">显示/隐藏</button>
-  <view>{{str}}</view>
+<view class="container">
+  <view class="label">车牌号码</view>
+  <view class="value">
+    <text wx:for="{{licenseArr}}" class="{{activeIndex === index ? 'active' : ''}}" data-index="{{index}}" bindtap="handleActiveItem">{{item}}</text>    
+  </view> 
 </view>
 <!-- 车牌号软键盘 -->
 <license-plate-keyboard show="{{showKeyboard}}" bind:handleinput="input" bind:handledelete="delete"></license-plate-keyboard>

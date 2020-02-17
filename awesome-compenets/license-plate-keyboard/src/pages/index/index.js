@@ -3,30 +3,38 @@
 Page({
   data: {
     showKeyboard: false,
-    str: '',
+    licenseArr: ['', '', '', '', '', '', ''],
+    activeIndex: -1,
   },
 
-  handleShow() {
+  handleActiveItem(e) {
+    const activeIndex = Number(e.currentTarget.dataset.index);
+
     this.setData({
-      showKeyboard: !this.data.showKeyboard,
+      activeIndex,
+      showKeyboard: true,
     });
   },
 
   input(e) {
     const data = this.data;
-    const str = data.str + e.detail.key;
+    const activeIndex = data.activeIndex;
+    const str = `licenseArr[${activeIndex}]`;
     
     this.setData({
-      str,
+      [str]: e.detail.key,
+      activeIndex: activeIndex < 6 ? (activeIndex + 1) : 6,
     });
   },
 
   delete() {
-    const str = this.data.str;
-    const newStr = str.substring(0, str.length - 1);
-    
+    const data = this.data;
+    const activeIndex = data.activeIndex;
+    const str = `licenseArr[${activeIndex}]`;
+
     this.setData({
-      str: newStr,
+      [str]: '',
+      activeIndex: activeIndex - 1,
     });
   },
 })
