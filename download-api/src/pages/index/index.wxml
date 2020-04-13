@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button bindtap="download">获取图片</button>
+  </view>
+  <view class="usermotto">
+    <image src="{{imgPath}}" />
+  </view>
+</view>
+  
